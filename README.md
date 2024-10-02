@@ -1,2 +1,2 @@
 # WinFormsDataGrid
-Windows Forms Legacy DataGrid for .Net Core
+Legacy Windows Forms DataGrid for .Net Core

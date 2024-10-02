@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net481;net8.0-windows</TargetFrameworks>
+		<OutputType>Library</OutputType>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+		<OutputPath>bin\</OutputPath>
+	</PropertyGroup>
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
+		<EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
+	</PropertyGroup>
+	<PropertyGroup>
+		<SuppressNETCoreSdkPreviewMessage>true</SuppressNETCoreSdkPreviewMessage>
+		<EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+		<NoWarn>$(NoWarn);SYSLIB0011;SYSLIB0003;SYSLIB0004;MSB3243</NoWarn>
+		<NoWarn>$(NoWarn);CS0618;CS0108;CS0114;CS0162;CS0168;CS0436;CS3021;CS8032;CS8632</NoWarn>
+		<GenerateResourceWarnOnBinaryFormatterUse>false</GenerateResourceWarnOnBinaryFormatterUse>
+	</PropertyGroup>
+	<PropertyGroup>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Include="..\CommonVersionAssemblyInfo.cs">
+			<Link>Properties\CommonVersionAssemblyInfo.cs</Link>
+		</Compile>
+		<Compile Include="..\CompanyAssemblyInfo.cs">
+			<Link>Properties\CompanyAssemblyInfo.cs</Link>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup Condition=" $(targetframework.startswith('net48')) ">
+		<Reference Include="System.Design" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="System.Resources.Extensions" Version="8.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resource.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resource.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Properties\Resource.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resource.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

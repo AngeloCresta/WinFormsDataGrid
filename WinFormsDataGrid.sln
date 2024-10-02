@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsDataGridDemo", "WinFormsDataGridDemo\WinFormsDataGridDemo.csproj", "{DE08F850-1EDE-45B8-8C7B-103700535B22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{80AFC74A-7E9B-4953-9A3E-A551F8855635}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Windows.Forms.Legacy", "System.Windows.Forms\System.Windows.Forms.Legacy.csproj", "{926857F4-5867-464F-9736-CC13A2E94F7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE08F850-1EDE-45B8-8C7B-103700535B22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE08F850-1EDE-45B8-8C7B-103700535B22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE08F850-1EDE-45B8-8C7B-103700535B22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE08F850-1EDE-45B8-8C7B-103700535B22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{926857F4-5867-464F-9736-CC13A2E94F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926857F4-5867-464F-9736-CC13A2E94F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926857F4-5867-464F-9736-CC13A2E94F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926857F4-5867-464F-9736-CC13A2E94F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5A9E05F2-471B-4EE0-987D-332D241AAF80}
+	EndGlobalSection
+EndGlobal

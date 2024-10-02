@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="DataGrid\DataGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DataGrid\DataGridBoolColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DataGrid\DataGridColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DataGrid\DataGridTable.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DataGrid\DataGridTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="DataGrid\DataGridTextBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0"?>
+<directory>
+   <xs:schema id="directory" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="directory" msdata:IsDataSet="true" msdata:MainDataTable="author" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="author">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="authorname" type="xs:string" default="" minOccurs="0" />
+                <xs:element name="age" type="xs:string" default="" minOccurs="0" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+   <author>
+      <authorname>Gambardella, Matthew</authorname>
+     <age>34</age>
+   </author>
+   <author>
+      <authorname>Ralls, Kim</authorname>
+     <age>69</age>
+   </author>
+   <author>
+      <authorname>Randall, Cynthia</authorname>
+     <age>48</age>
+   </author>
+   <author>
+      <authorname>Thurman, Paula</authorname>
+     <age>38</age>
+   </author>
+   <author>
+      <authorname>Knorr, Stefan</authorname>
+     <age>28</age>
+   </author>
+   <author>
+     <authorname>Kress, Peter</authorname>
+     <age>25</age>
+   </author>
+   <author>
+      <authorname>O'Brien, Tim</authorname>
+     <age>33</age>
+   </author>
+   <author>
+      <authorname>Galos, Mike</authorname>
+     <age>54</age>
+   </author>
+   <author>
+     <authorname>Ralls, Kim</authorname>
+     <age>23</age>
+   </author>
+   <author>
+      <authorname>Corets, Eva</authorname>
+     <age>76</age>
+   </author>
+   <author>
+      <authorname>Knorr, Stefan</authorname>
+     <age>65</age>
+   </author>
+   <author>
+      <authorname>Kress, Peter</authorname>
+     <age>23</age>
+   </author>
+</directory>
