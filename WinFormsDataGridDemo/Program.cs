@@ -10,7 +10,13 @@ namespace WinFormsDataGrid
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+#if NET9_0_OR_GREATER
+            Application.SetColorMode(SystemColorMode.System);
+#endif
+
             Application.Run(new Form1());
         }
     }

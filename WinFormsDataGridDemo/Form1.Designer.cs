@@ -1,4 +1,9 @@
-﻿using System.Windows.Forms;
+﻿#if NET10_0_OR_GREATER
+using DataGrid = System.Windows.Forms.Legacy.DataGrid;
+#else
+using DataGrid = System.Windows.Forms.DataGrid;
+#endif
+
 
 namespace WinFormsDataGrid
 {

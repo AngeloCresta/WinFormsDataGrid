@@ -4,7 +4,11 @@
 // </copyright>                                                                
 //------------------------------------------------------------------------------
 
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
 namespace System.Windows.Forms
+#endif
 {
     using System.Security.Permissions;
     using System.Runtime.Remoting;
@@ -33,7 +37,7 @@ namespace System.Windows.Forms
     /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle"]/*' />
     /// <devdoc>
     ///    <para>Specifies the appearance and text formatting and behavior of
-    ///       a <see cref='System.Windows.Forms.DataGrid'/> control column.</para>
+    ///       a <see cref='DataGrid'/> control column.</para>
     /// </devdoc>
     [
     ToolboxItem(false),
@@ -74,7 +78,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.DataGridColumnStyle"]/*' />
         /// <devdoc>
         ///    <para>In a derived class,
-        ///       initializes a new instance of the <see cref='System.Windows.Forms.DataGridColumnStyle'/> class.</para>
+        ///       initializes a new instance of the <see cref='DataGridColumnStyle'/> class.</para>
         /// </devdoc>
         public DataGridColumnStyle()
         {
@@ -82,7 +86,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.DataGridColumnStyle1"]/*' />
         /// <devdoc>
-        /// <para>Initializes a new instance of the <see cref='System.Windows.Forms.DataGridColumnStyle'/> class with the specified <see cref='T:System.ComponentModel.PropertyDescriptor'/>.</para>
+        /// <para>Initializes a new instance of the <see cref='DataGridColumnStyle'/> class with the specified <see cref='T:System.ComponentModel.PropertyDescriptor'/>.</para>
         /// </devdoc>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")] // Shipped like this in Everett.
         public DataGridColumnStyle(PropertyDescriptor prop) : this()
@@ -174,7 +178,7 @@ namespace System.Windows.Forms
         /// </summary>
         /// <value>
         /// <para>A <see cref='System.Drawing.Color'/> that represents the alternating background
-        ///    color. The default is the <see cref='System.Windows.Forms.DataGrid.AlternatingBackColor'/> of the
+        ///    color. The default is the <see cref='DataGrid.AlternatingBackColor'/> of the
         ///    control.</para>
         /// </value>
         /// <remarks>
@@ -182,7 +186,7 @@ namespace System.Windows.Forms
         ///       in the <see cref='System.Drawing.DataGrid'/> control.</para>
         /// </remarks>
         /// <example>
-        /// <para>The following example sets the <see cref='System.Windows.Forms.DataGridColumnStyle.AlternatingBackColor'/> property of a specific <see cref='System.Windows.Forms.DataGridColumnStyle'/>
+        /// <para>The following example sets the <see cref='DataGridColumnStyle.AlternatingBackColor'/> property of a specific <see cref='DataGridColumnStyle'/>
         /// to yellow.</para>
         /// <code lang='VB'>Private Sub SetColumnAlternatingBackColor()
         ///    ' Create a color object.
@@ -196,8 +200,8 @@ namespace System.Windows.Forms
         /// End Sub
         /// </code>
         /// </example>
-        /// <seealso cref='System.Windows.Forms.DataGrid.AlternatingBackColor'/>
-        /// <seealso cref='System.Windows.Forms.DataGridColumnStyle.BackColor'/>
+        /// <seealso cref='DataGrid.AlternatingBackColor'/>
+        /// <seealso cref='DataGridColumnStyle.BackColor'/>
         [Category(ModernDefaults.PropertyCategory.Colors)]
         public virtual Color AlternatingBackColor {
             get {
@@ -208,7 +212,7 @@ namespace System.Windows.Forms
                 if (grid != null) {
                     return this.DataGridTableStyle.AlternatingBackColor;
                 }
-                return System.Windows.Forms.DataGridTableStyle.defaultAlternatingBackBrush.Color;
+                return DataGridTableStyle.defaultAlternatingBackBrush.Color;
             }
             set {
                 if (value != Color.Empty && alternatingBackBrush != null && value.Equals(alternatingBackBrush.Color)) {
@@ -223,7 +227,7 @@ namespace System.Windows.Forms
 
         /*
         /// <summary>
-        /// <para>Indicates whether the <see cref='System.Windows.Forms.DataGridColumnStyle.AlternatingBackColor'/>
+        /// <para>Indicates whether the <see cref='DataGridColumnStyle.AlternatingBackColor'/>
         /// property should be persisted.</para>
         /// </summary>
         /// <returns>
@@ -233,9 +237,9 @@ namespace System.Windows.Forms
         /// </returns>
         /// <remarks>
         ///    <para>You typically use this method only if you are either
-        ///       creating a designer for the <see cref='System.Windows.Forms.DataGrid'/>, or creating your own control
-        ///       incorporating the <see cref='System.Windows.Forms.DataGrid'/>.</para>
-        /// <para>You can use the <see cref='System.Windows.Forms.DataGridColumnStyle.ShouldSerializeAlternatingBackColor'/> method to
+        ///       creating a designer for the <see cref='DataGrid'/>, or creating your own control
+        ///       incorporating the <see cref='DataGrid'/>.</para>
+        /// <para>You can use the <see cref='DataGridColumnStyle.ShouldSerializeAlternatingBackColor'/> method to
         ///    determine whether the property value has changed from its default.</para>
         /// </remarks>
         /// <seealso cref='System.Drawing.DataGridColumnStyle.AlternatingBackColor'/>
@@ -247,18 +251,18 @@ namespace System.Windows.Forms
         /*
         /// <summary>
         ///    <para>
-        ///       Resets the <see cref='System.Windows.Forms.DataGridColumnStyle.AlternatingBackColor'/>
+        ///       Resets the <see cref='DataGridColumnStyle.AlternatingBackColor'/>
         ///       property to its default value.
         ///    </para>
         /// </summary>
         /// <remarks>
         ///    <para>
         ///       You typically use this method only if you are either creating a designer for
-        ///       the <see cref='System.Windows.Forms.DataGrid'/>, or creating your own control incorporating the
-        ///    <see cref='System.Windows.Forms.DataGrid'/>. 
+        ///       the <see cref='DataGrid'/>, or creating your own control incorporating the
+        ///    <see cref='DataGrid'/>. 
         ///    </para>
         ///    <para>
-        ///       You can use the <see cref='System.Windows.Forms.DataGridColumnStyle.ShouldSerializeAlternatingBackColor'/>
+        ///       You can use the <see cref='DataGridColumnStyle.ShouldSerializeAlternatingBackColor'/>
         ///       method to determine whether the property value has changed from its default.
         ///    </para>
         ///    <para>
@@ -278,7 +282,7 @@ namespace System.Windows.Forms
         /*
         /// <summary>
         ///    <para>
-        ///       Gets either the <see cref='System.Windows.Forms.DataGridColumnStyle.BackColor'/> or the <see cref='System.Windows.Forms.DataGridColumnStyle.AlternatingBackColor'/> of
+        ///       Gets either the <see cref='DataGridColumnStyle.BackColor'/> or the <see cref='DataGridColumnStyle.AlternatingBackColor'/> of
         ///       a specified row.
         ///    </para>
         /// </summary>
@@ -287,9 +291,9 @@ namespace System.Windows.Forms
         ///       A <see cref='System.Drawing.Color'/> that represents the background color.
         ///    </para>
         /// </returns>
-        /// <seealso cref='System.Windows.Forms.DataGridColumnStyle.AlternatingBackColor'/>
-        /// <seealso cref='System.Windows.Forms.DataGridColumnStyle.BackColor'/>
-        /// <seealso cref='System.Windows.Forms.DataGridColumnStyle.GetBackColor'/>
+        /// <seealso cref='DataGridColumnStyle.AlternatingBackColor'/>
+        /// <seealso cref='DataGridColumnStyle.BackColor'/>
+        /// <seealso cref='DataGridColumnStyle.GetBackColor'/>
         /// <keyword term=''/>
         public Color GetBackColor(int rowNum) {
             DataGrid grid = DataGrid;
@@ -337,7 +341,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.PropertyDescriptor"]/*' />
         /// <devdoc>
         /// <para>Gets or sets the <see cref='System.Data.DataColumn'/> that determines the
-        ///    attributes of data displayed by the <see cref='System.Windows.Forms.DataGridColumnStyle'/>.</para>
+        ///    attributes of data displayed by the <see cref='DataGridColumnStyle'/>.</para>
         /// </devdoc>
         [DefaultValue(null), Browsable(false), EditorBrowsable(EditorBrowsableState.Advanced)]
         public virtual PropertyDescriptor PropertyDescriptor
@@ -377,7 +381,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.CreateHeaderAccessibleObject"]/*' />
         /// <devdoc>
-        /// <para>Gets the <see cref='System.Windows.Forms.DataGrid'/> control that the <see cref='System.Windows.Forms.DataGridColumnStyle'/> belongs to.</para>
+        /// <para>Gets the <see cref='DataGrid'/> control that the <see cref='DataGridColumnStyle'/> belongs to.</para>
         /// </devdoc>
         /*
         protected virtual DataGrid DataGrid {
@@ -397,7 +401,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.SetDataGrid"]/*' />
         /// <devdoc>
-        /// <para>When overridden in a derived class, sets the <see cref='System.Windows.Forms.DataGrid'/> control that this column 
+        /// <para>When overridden in a derived class, sets the <see cref='DataGrid'/> control that this column 
         ///    belongs to.</para>
         /// </devdoc>
         protected virtual void SetDataGrid(DataGrid value)
@@ -409,7 +413,7 @@ namespace System.Windows.Forms
         /// <devdoc>
         ///    <para>
         ///       When overridden in a derived class,
-        ///       sets the <see cref='System.Windows.Forms.DataGrid'/> for the column.
+        ///       sets the <see cref='DataGrid'/> for the column.
         ///    </para>
         /// </devdoc>
         protected virtual void SetDataGridInColumn(DataGrid value)
@@ -443,7 +447,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.DataGridTableStyle"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Gets the System.Windows.Forms.DataGridTableStyle for the column.
+        ///       Gets the DataGridTableStyle for the column.
         ///    </para>
         /// </devdoc>
         [Browsable(false)]
@@ -525,7 +529,7 @@ namespace System.Windows.Forms
         /// <value>
         ///    <para>
         ///       A <see cref='System.Drawing.Color'/> that represents the foreground color. The
-        ///       default is the foreground color of the <see cref='System.Windows.Forms.DataGrid'/> control.
+        ///       default is the foreground color of the <see cref='DataGrid'/> control.
         ///    </para>
         /// </value>
         /// <remarks>
@@ -536,8 +540,8 @@ namespace System.Windows.Forms
         /// </remarks>
         /// <example>
         ///    <para>
-        ///       The following example sets the <see cref='System.Windows.Forms.DataGridColumnStyle.ForeColor'/> property of
-        ///       a given <see cref='System.Windows.Forms.DataGridColumnStyle'/>.
+        ///       The following example sets the <see cref='DataGridColumnStyle.ForeColor'/> property of
+        ///       a given <see cref='DataGridColumnStyle'/>.
         ///    </para>
         ///    <code lang='VB'>
         /// Dim c As System.Drawing.Color
@@ -547,9 +551,9 @@ namespace System.Windows.Forms
         /// dgCol.ForeColor = c
         ///       </code>
         /// </example>
-        /// <seealso cref='System.Windows.Forms.DataGridColumnStyle.AlternatingBackColor'/>
-        /// <seealso cref='System.Windows.Forms.DataGridColumnStyle.BackColor'/>
-        /// <seealso cref='System.Windows.Forms.DataGridColumnStyle.GetBackColor'/>
+        /// <seealso cref='DataGridColumnStyle.AlternatingBackColor'/>
+        /// <seealso cref='DataGridColumnStyle.BackColor'/>
+        /// <seealso cref='DataGridColumnStyle.GetBackColor'/>
         /// <keyword term=''/>
         public virtual Color ForeColor {
             get {
@@ -589,7 +593,7 @@ namespace System.Windows.Forms
         /*
         /// <summary>
         ///    <para>
-        ///       Indicates if the <see cref='System.Windows.Forms.DataGridColumnStyle.ForeColor'/> property should be
+        ///       Indicates if the <see cref='DataGridColumnStyle.ForeColor'/> property should be
         ///       persisted.
         ///    </para>
         /// </summary>
@@ -602,8 +606,8 @@ namespace System.Windows.Forms
         /// <remarks>
         ///    <para>
         ///       You typically use this method only if you are either creating a designer for
-        ///       the <see cref='System.Windows.Forms.DataGrid'/>, or creating your own control incorporating the
-        ///    <see cref='System.Windows.Forms.DataGrid'/>. 
+        ///       the <see cref='DataGrid'/>, or creating your own control incorporating the
+        ///    <see cref='DataGrid'/>. 
         ///    </para>
         /// </remarks>
         internal bool ShouldSerializeForeColor() {
@@ -614,17 +618,17 @@ namespace System.Windows.Forms
         /*
         /// <summary>
         ///    <para>
-        ///       Resets the <see cref='System.Windows.Forms.DataGridColumnStyle.ForeColor'/> property to its default value.
+        ///       Resets the <see cref='DataGridColumnStyle.ForeColor'/> property to its default value.
         ///    </para>
         /// </summary>
         /// <remarks>
         ///    <para>
         ///       You typically use this method if you are either creating a designer for
-        ///       the <see cref='System.Windows.Forms.DataGrid'/>, or creating your own control incorporating the
-        ///    <see cref='System.Windows.Forms.DataGrid'/>. 
+        ///       the <see cref='DataGrid'/>, or creating your own control incorporating the
+        ///    <see cref='DataGrid'/>. 
         ///    </para>
         ///    <para>
-        ///       You can use the <see cref='System.Windows.Forms.DataGridColumnStyle.ShouldSerializeForeColor'/> method to
+        ///       You can use the <see cref='DataGridColumnStyle.ShouldSerializeForeColor'/> method to
         ///       determine whether the property value has changed from its default.
         ///    </para>
         ///    <para>
@@ -740,7 +744,7 @@ namespace System.Windows.Forms
 
         /// <devdoc>
         ///    <para>
-        ///       Indicates whether the System.Windows.Forms.DataGridColumnStyle.Header property should be
+        ///       Indicates whether the DataGridColumnStyle.Header property should be
         ///       persisted.
         ///    </para>
         /// </devdoc>
@@ -752,7 +756,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.ResetHeader"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Resets the System.Windows.Forms.DataGridColumnStyle.Header to its default value
+        ///       Resets the DataGridColumnStyle.Header to its default value
         ///       (<see langword='null'/> ).
         ///    </para>
         /// </devdoc>
@@ -911,7 +915,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.BeginUpdate"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Suspends the painting of the column until the <see cref='System.Windows.Forms.DataGridColumnStyle.EndUpdate'/>
+        ///       Suspends the painting of the column until the <see cref='DataGridColumnStyle.EndUpdate'/>
         ///       method is called.
         ///    </para>
         /// </devdoc>
@@ -924,7 +928,7 @@ namespace System.Windows.Forms
         /// <devdoc>
         ///    <para>
         ///       Resumes the painting of columns suspended by calling the
-        ///    <see cref='System.Windows.Forms.DataGridColumnStyle.BeginUpdate'/> 
+        ///    <see cref='DataGridColumnStyle.BeginUpdate'/> 
         ///    method.
         /// </para>
         /// </devdoc>
@@ -1177,7 +1181,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.Paint"]/*' />
         /// <devdoc>
-        /// <para>Paints the a <see cref='System.Windows.Forms.DataGridColumnStyle'/> with the specified <see cref='System.Drawing.Graphics'/>,
+        /// <para>Paints the a <see cref='DataGridColumnStyle'/> with the specified <see cref='System.Drawing.Graphics'/>,
         /// <see cref='System.Drawing.Rectangle'/>, System.Windows.Forms.CurrencyManager, and row number.</para>
         /// </devdoc>
         // PM team has reviewed and decided on naming changes already
@@ -1187,7 +1191,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.Paint1"]/*' />
         /// <devdoc>
         ///    <para>When overridden in a derived class,
-        ///       paints a <see cref='System.Windows.Forms.DataGridColumnStyle'/> with the specified <see cref='System.Drawing.Graphics'/>, <see cref='System.Drawing.Rectangle'/>, see Rectangle, row number, and
+        ///       paints a <see cref='DataGridColumnStyle'/> with the specified <see cref='System.Drawing.Graphics'/>, <see cref='System.Drawing.Rectangle'/>, see Rectangle, row number, and
         ///       alignment.</para>
         /// </devdoc>
         // PM team has reviewed and decided on naming changes already
@@ -1197,7 +1201,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridColumn.uex' path='docs/doc[@for="DataGridColumnStyle.Paint2"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Paints a <see cref='System.Windows.Forms.DataGridColumnStyle'/> with the specified <see cref='System.Drawing.Graphics'/>, <see cref='System.Drawing.Rectangle'/>, see System.Data.DataView, row number, background color, foreground color, and alignment.
+        ///       Paints a <see cref='DataGridColumnStyle'/> with the specified <see cref='System.Drawing.Graphics'/>, <see cref='System.Drawing.Rectangle'/>, see System.Data.DataView, row number, background color, foreground color, and alignment.
         ///    </para>
         /// </devdoc>
         // PM team has reviewed and decided on naming changes already

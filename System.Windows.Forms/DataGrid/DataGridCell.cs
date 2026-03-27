@@ -4,8 +4,12 @@
 // </copyright>                                                                
 //------------------------------------------------------------------------------
 
-namespace System.Windows.Forms {
-
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
+namespace System.Windows.Forms
+#endif
+{
     using System.Diagnostics;
     using System.Diagnostics.CodeAnalysis;
     using System;
@@ -22,7 +26,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridCell.uex' path='docs/doc[@for="DataGridCell.ColumnNumber"]/*' />
         /// <devdoc>
-        /// <para>Gets or sets the number of a column in the <see cref='System.Windows.Forms.DataGrid'/> control.</para>
+        /// <para>Gets or sets the number of a column in the <see cref='DataGrid'/> control.</para>
         /// </devdoc>
         public int ColumnNumber {
             get {
@@ -35,7 +39,7 @@ namespace System.Windows.Forms {
         
         /// <include file='doc\DataGridCell.uex' path='docs/doc[@for="DataGridCell.RowNumber"]/*' />
         /// <devdoc>
-        /// <para>Gets or sets the number of a row in the <see cref='System.Windows.Forms.DataGrid'/> control.</para>
+        /// <para>Gets or sets the number of a row in the <see cref='DataGrid'/> control.</para>
         /// </devdoc>
         public int RowNumber {
             get {
@@ -49,7 +53,7 @@ namespace System.Windows.Forms {
         /// <include file='doc\DataGridCell.uex' path='docs/doc[@for="DataGridCell.DataGridCell"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Initializes a new instance of the <see cref='System.Windows.Forms.DataGridCell'/> class.
+        ///       Initializes a new instance of the <see cref='DataGridCell'/> class.
         ///    </para>
         /// </devdoc>
         public DataGridCell(int r, int c) {
@@ -60,8 +64,8 @@ namespace System.Windows.Forms {
         /// <include file='doc\DataGridCell.uex' path='docs/doc[@for="DataGridCell.Equals"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Gets a value indicating whether the <see cref='System.Windows.Forms.DataGridCell'/> is identical to a second
-        ///    <see cref='System.Windows.Forms.DataGridCell'/>.
+        ///       Gets a value indicating whether the <see cref='DataGridCell'/> is identical to a second
+        ///    <see cref='DataGridCell'/>.
         ///    </para>
         /// </devdoc>        
         [SuppressMessage("Microsoft.Usage", "CA2231:OverrideOperatorEqualsOnOverridingValueTypeEquals")]

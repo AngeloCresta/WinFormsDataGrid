@@ -6,7 +6,11 @@
 
 //using System.Reflection.Metadata;
 
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
 namespace System.Windows.Forms
+#endif
 {
     using System.Runtime.Remoting;
     using System.Runtime.Versioning;
@@ -29,7 +33,7 @@ namespace System.Windows.Forms
     /// <include file='doc\DataGridRow.uex' path='docs/doc[@for="DataGridRow"]/*' />
     /// <devdoc>
     ///    <para>Encapsulates the painting logic for a new row added to a 
-    ///    <see cref='System.Windows.Forms.DataGrid'/> 
+    ///    <see cref='DataGrid'/> 
     ///    control.</para>
     /// </devdoc>
     internal abstract class DataGridRow : MarshalByRefObject
@@ -68,7 +72,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridRow.uex' path='docs/doc[@for="DataGridRow.DataGridRow"]/*' />
         /// <devdoc>
-        /// <para>Initializes a new instance of a <see cref='System.Windows.Forms.DataGridRow'/> . </para>
+        /// <para>Initializes a new instance of a <see cref='DataGridRow'/> . </para>
         /// </devdoc>
         [
             SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")  // This class and its derived classes are internal.
@@ -143,7 +147,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridRow.uex' path='docs/doc[@for="DataGridRow.DataGrid"]/*' />
         /// <devdoc>
-        /// <para>Gets the <see cref='System.Windows.Forms.DataGrid'/> control the row belongs to.</para>
+        /// <para>Gets the <see cref='DataGrid'/> control the row belongs to.</para>
         /// </devdoc>
         public DataGrid DataGrid
         {
@@ -382,7 +386,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridRow.uex' path='docs/doc[@for="DataGridRow.OnKeyPress"]/*' />
         /// <devdoc>
-        /// <para>When overridden in a derived class, called by the <see cref='System.Windows.Forms.DataGrid'/> control when a key press occurs on a row with focus.</para>
+        /// <para>When overridden in a derived class, called by the <see cref='DataGrid'/> control when a key press occurs on a row with focus.</para>
         /// </devdoc>
         public virtual bool OnKeyPress(Keys keyData)
         {
@@ -401,7 +405,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridRow.uex' path='docs/doc[@for="DataGridRow.OnMouseDown"]/*' />
         /// <devdoc>
-        /// <para> Called by the <see cref='System.Windows.Forms.DataGrid'/> when a click occurs in the row's client area 
+        /// <para> Called by the <see cref='DataGrid'/> when a click occurs in the row's client area 
         ///    specifed by the x and y coordinates and the specified <see cref='System.Drawing.Rectangle'/>
         ///    .</para>
         /// </devdoc>
@@ -412,7 +416,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridRow.uex' path='docs/doc[@for="DataGridRow.OnMouseDown1"]/*' />
         /// <devdoc>
-        /// <para>When overridden in a derived class, is called by the <see cref='System.Windows.Forms.DataGrid'/> when a click occurs 
+        /// <para>When overridden in a derived class, is called by the <see cref='DataGrid'/> when a click occurs 
         ///    in the row's
         ///    client area, specified by x and y coordinates.</para>
         /// </devdoc>
@@ -437,7 +441,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridRow.uex' path='docs/doc[@for="DataGridRow.OnMouseMove1"]/*' />
         /// <devdoc>
-        /// <para>When overridden in a derived class, is called by the <see cref='System.Windows.Forms.DataGrid'/> when 
+        /// <para>When overridden in a derived class, is called by the <see cref='DataGrid'/> when 
         ///    the mouse moves within the row's client area.</para>
         /// </devdoc>
         public virtual bool OnMouseMove(int x, int y, Rectangle rowHeaders, bool alignToRight)

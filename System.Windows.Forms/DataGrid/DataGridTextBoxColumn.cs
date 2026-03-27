@@ -4,7 +4,11 @@
 // </copyright>                                                                
 //------------------------------------------------------------------------------
 
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
 namespace System.Windows.Forms
+#endif
 {
     using System.Runtime.Remoting;
 
@@ -25,7 +29,7 @@ namespace System.Windows.Forms
 
     /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn"]/*' />
     /// <devdoc>
-    /// <para>Hosts a System.Windows.Forms.TextBox control in a cell of a System.Windows.Forms.DataGridColumnStyle for editing strings.</para>
+    /// <para>Hosts a System.Windows.Forms.TextBox control in a cell of a DataGridColumnStyle for editing strings.</para>
     /// </devdoc>
     public class DataGridTextBoxColumn : DataGridColumnStyle
     {
@@ -48,7 +52,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.DataGridTextBoxColumn"]/*' />
         /// <devdoc>
-        /// <para>Initializes a new instance of the System.Windows.Forms.DataGridTextBoxColumn
+        /// <para>Initializes a new instance of the DataGridTextBoxColumn
         /// class.</para>
         /// </devdoc>
         [
@@ -61,7 +65,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.DataGridTextBoxColumn1"]/*' />
         /// <devdoc>
-        /// <para>Initializes a new instance of a System.Windows.Forms.DataGridTextBoxColumn with
+        /// <para>Initializes a new instance of a DataGridTextBoxColumn with
         ///    a specified System.Data.DataColumn.</para>
         /// </devdoc>
         [
@@ -75,7 +79,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.DataGridTextBoxColumn2"]/*' />
         /// <devdoc>
-        /// <para>Initializes a new instance of a System.Windows.Forms.DataGridTextBoxColumn. with
+        /// <para>Initializes a new instance of a DataGridTextBoxColumn. with
         ///    the specified System.Data.DataColumn and System.Windows.Forms.ComponentModel.Format.</para>
         /// </devdoc>
         [
@@ -145,7 +149,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.SetDataGridInColumn"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Adds a System.Windows.Forms.TextBox control to the System.Windows.Forms.DataGrid control's System.Windows.Forms.Control.ControlCollection
+        ///       Adds a System.Windows.Forms.TextBox control to the DataGrid control's System.Windows.Forms.Control.ControlCollection
         ///       .
         ///    </para>
         /// </devdoc>
@@ -180,7 +184,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.PropertyDescriptor"]/*' />
         /// <devdoc>
-        /// <para>Gets or sets the System.Windows.Forms.ComponentModel.Format for the System.Windows.Forms.DataGridTextBoxColumn
+        /// <para>Gets or sets the System.Windows.Forms.ComponentModel.Format for the DataGridTextBoxColumn
         /// .</para>
         /// </devdoc>
         [
@@ -303,7 +307,7 @@ namespace System.Windows.Forms
         /// <devdoc>
         ///    <para>
         ///       Hides the System.Windows.Forms.TextBox
-        ///       control and moves the focus to the System.Windows.Forms.DataGrid
+        ///       control and moves the focus to the DataGrid
         ///       control.
         ///    </para>
         /// </devdoc>
@@ -347,7 +351,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.EndEdit"]/*' />
         /// <devdoc>
-        /// <para>Ends an edit operation on the System.Windows.Forms.DataGridColumnStyle
+        /// <para>Ends an edit operation on the DataGridColumnStyle
         /// .</para>
         /// </devdoc>
         protected void EndEdit()
@@ -374,7 +378,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.GetMinimumHeight"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Gets the height of a cell in a System.Windows.Forms.DataGridColumnStyle
+        ///       Gets the height of a cell in a DataGridColumnStyle
         ///       .
         ///    </para>
         /// </devdoc>
@@ -607,7 +611,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.Paint"]/*' />
         /// <devdoc>
-        /// <para>Paints the a System.Windows.Forms.DataGridColumnStyle with the specified System.Drawing.Graphics,
+        /// <para>Paints the a DataGridColumnStyle with the specified System.Drawing.Graphics,
         /// System.Drawing.Rectangle, DataView.Rectangle, and row number. </para>
         /// </devdoc>
         protected internal override void Paint(Graphics g, Rectangle bounds, CurrencyManager source, int rowNum)
@@ -618,7 +622,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.Paint1"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Paints a System.Windows.Forms.DataGridColumnStyle with the specified System.Drawing.Graphics, System.Drawing.Rectangle, DataView, row number, and alignment.
+        ///       Paints a DataGridColumnStyle with the specified System.Drawing.Graphics, System.Drawing.Rectangle, DataView, row number, and alignment.
         ///    </para>
         /// </devdoc>
         protected internal override void Paint(Graphics g, Rectangle bounds, CurrencyManager source, int rowNum, bool alignToRight)
@@ -629,7 +633,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGridTextBoxColumn.uex' path='docs/doc[@for="DataGridTextBoxColumn.Paint2"]/*' />
         /// <devdoc>
-        /// <para>Paints a System.Windows.Forms.DataGridColumnStyle with the specified System.Drawing.Graphics,
+        /// <para>Paints a DataGridColumnStyle with the specified System.Drawing.Graphics,
         /// System.Drawing.Rectangle, DataView.Rectangle, row number, background color, 
         ///    and foreground color..</para>
         /// </devdoc>

@@ -4,8 +4,12 @@
 // </copyright>                                                                
 //------------------------------------------------------------------------------
 
-
-namespace System.Windows.Forms {
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
+namespace System.Windows.Forms
+#endif
+{
     using System.ComponentModel;
     using System.ComponentModel.Design;
     using System.Diagnostics;
@@ -22,7 +26,7 @@ namespace System.Windows.Forms {
 
     /// <include file='doc\DataGridTable.uex' path='docs/doc[@for="DataGridTableStyle"]/*' />
     /// <devdoc>
-    /// <para>Represents the table drawn by the <see cref='System.Windows.Forms.DataGrid'/> control at run time.</para>
+    /// <para>Represents the table drawn by the <see cref='DataGrid'/> control at run time.</para>
     /// </devdoc>
     [
     ToolboxItem(false),
@@ -159,7 +163,7 @@ namespace System.Windows.Forms {
                     throw new ArgumentException("AlternatingBackColor");
                 }
 
-                if (System.Windows.Forms.DataGrid.IsTransparentColor(value))
+                if (DataGrid.IsTransparentColor(value))
                     throw new ArgumentException();
                 if (value.IsEmpty) {
                     throw new ArgumentException("AlternatingBackColor");
@@ -215,7 +219,7 @@ namespace System.Windows.Forms {
         ///    <para>[To be supplied.]</para>
         /// </devdoc>
         protected bool ShouldSerializeBackColor() {
-            return !System.Windows.Forms.DataGridTableStyle.DefaultBackBrush.Equals(this.backBrush);
+            return !DataGridTableStyle.DefaultBackBrush.Equals(this.backBrush);
         }
 
         /// <include file='doc\DataGridTable.uex' path='docs/doc[@for="DataGridTableStyle.ShouldSerializeForeColor"]/*' />
@@ -223,7 +227,7 @@ namespace System.Windows.Forms {
         ///    <para>[To be supplied.]</para>
         /// </devdoc>
         protected bool ShouldSerializeForeColor() {
-            return !System.Windows.Forms.DataGridTableStyle.DefaultForeBrush.Equals(this.foreBrush);
+            return !DataGridTableStyle.DefaultForeBrush.Equals(this.foreBrush);
         }
 
         internal SolidBrush BackBrush {
@@ -246,7 +250,7 @@ namespace System.Windows.Forms {
                     throw new ArgumentException("BackColor");
                 }
 
-                if (System.Windows.Forms.DataGrid.IsTransparentColor(value))
+                if (DataGrid.IsTransparentColor(value))
                     throw new ArgumentException("DataGridTableStyleTransparentBackColorNotAllowed");
                 if (value.IsEmpty) {
                     throw new ArgumentException("BackColor");
@@ -553,7 +557,7 @@ namespace System.Windows.Forms {
                     throw new ArgumentException("HeaderBackColor");
                 }
 
-                if (System.Windows.Forms.DataGrid.IsTransparentColor(value))
+                if (DataGrid.IsTransparentColor(value))
                     throw new ArgumentException("DataGridTableStyleTransparentHeaderBackColorNotAllowed");
                 if (value.IsEmpty)
                     throw new ArgumentException("HeaderBackColor");
@@ -1161,7 +1165,7 @@ namespace System.Windows.Forms {
                     throw new ArgumentException("SelectionBackColor");
                 }
 
-                if (System.Windows.Forms.DataGrid.IsTransparentColor(value))
+                if (DataGrid.IsTransparentColor(value))
                     throw new ArgumentException("DataGridTableStyleTransparentSelectionBackColorNotAllowed");
                 if (value.IsEmpty)
                     throw new ArgumentException("SelectionBackColor");
@@ -1298,7 +1302,7 @@ namespace System.Windows.Forms {
         /// <include file='doc\DataGridTable.uex' path='docs/doc[@for="DataGridTableStyle.DataGridTableStyle"]/*' />
         /// <internalonly/>
         /// <devdoc>
-        /// <para>Initializes a new instance of the <see cref='System.Windows.Forms.DataGridTableStyle'/> class.</para>
+        /// <para>Initializes a new instance of the <see cref='DataGridTableStyle'/> class.</para>
         /// </devdoc>
         public DataGridTableStyle(bool isDefaultTableStyle) {
             gridColumns = new GridColumnStylesCollection(this, isDefaultTableStyle);
@@ -1315,7 +1319,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridTable.uex' path='docs/doc[@for="DataGridTableStyle.DataGridTableStyle2"]/*' />
         /// <devdoc>
-        /// <para>Initializes a new instance of the <see cref='System.Windows.Forms.DataGridTableStyle'/> class with the specified
+        /// <para>Initializes a new instance of the <see cref='DataGridTableStyle'/> class with the specified
         /// <see cref='System.Windows.Forms.CurrencyManager'/>.</para>
         /// </devdoc>
         [
@@ -1505,7 +1509,7 @@ namespace System.Windows.Forms {
         /// <include file='doc\DataGridTable.uex' path='docs/doc[@for="DataGridTableStyle.SetInternalDataGrid"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Gets or sets the <see cref='System.Windows.Forms.DataGrid'/>
+        ///       Gets or sets the <see cref='DataGrid'/>
         ///       control displaying the table.
         ///    </para>
         /// </devdoc>
@@ -1526,7 +1530,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridTable.uex' path='docs/doc[@for="DataGridTableStyle.DataGrid"]/*' />
         /// <devdoc>
-        /// <para>Gets or sets the <see cref='System.Windows.Forms.DataGrid'/> control for the drawn table.</para>
+        /// <para>Gets or sets the <see cref='DataGrid'/> control for the drawn table.</para>
         /// </devdoc>
         [Browsable(false)]
         public virtual DataGrid DataGrid {

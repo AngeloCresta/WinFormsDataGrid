@@ -151,7 +151,11 @@ using System.Runtime.Versioning;
 [assembly: SuppressMessage("Microsoft.Security", "CA2118:ReviewSuppressUnmanagedCodeSecurityUsage", Scope = "member", Target = "System.Windows.Forms.UnsafeNativeMethods+Shell32.SHGetFolderPathExPrivate(System.Guid&,System.UInt32,System.IntPtr,System.Text.StringBuilder,System.UInt32):System.Int32")]
 [assembly: SuppressMessage("Microsoft.Security", "CA2118:ReviewSuppressUnmanagedCodeSecurityUsage", Scope = "member", Target = "System.Windows.Forms.UnsafeNativeMethods+Shell32.SHILCreateFromPath(System.String,System.IntPtr&,System.UInt32&):System.Int32")]
 
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
 namespace System.Windows.Forms
+#endif
 {
 
     //using Accessibility;

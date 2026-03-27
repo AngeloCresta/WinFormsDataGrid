@@ -6,7 +6,11 @@
 
 //using System.Reflection.Metadata;
 
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
 namespace System.Windows.Forms
+#endif
 {
     using System.Runtime.Remoting;
     using System;
@@ -20,7 +24,7 @@ namespace System.Windows.Forms
     /// <include file='doc\DataGridTextBox.uex' path='docs/doc[@for="DataGridTextBox"]/*' />
     /// <devdoc>
     /// <para>Represents a <see cref='System.Windows.Forms.TextBox'/> control that is hosted in a 
-    /// <see cref='System.Windows.Forms.DataGridTextBoxColumn'/> .</para>
+    /// <see cref='DataGridTextBoxColumn'/> .</para>
     /// </devdoc>
     [
     ComVisible(true),
@@ -93,7 +97,7 @@ namespace System.Windows.Forms
         }
         /// <include file='doc\DataGridTextBox.uex' path='docs/doc[@for="DataGridTextBox.SetDataGrid"]/*' />
         /// <devdoc>
-        /// <para>Sets the <see cref='System.Windows.Forms.DataGrid'/> to which this <see cref='System.Windows.Forms.TextBox'/> control belongs.</para>
+        /// <para>Sets the <see cref='DataGrid'/> to which this <see cref='System.Windows.Forms.TextBox'/> control belongs.</para>
         /// </devdoc>
         public void SetDataGrid(DataGrid parentGrid)
         {

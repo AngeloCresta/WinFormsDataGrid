@@ -5,7 +5,13 @@
 //------------------------------------------------------------------------------
 
 
-namespace System.Windows.Forms {
+#if NET10_0_OR_GREATER
+
+namespace System.Windows.Forms.Legacy
+#else
+namespace System.Windows.Forms
+#endif
+{
 
     using System.Diagnostics;
 
@@ -17,7 +23,7 @@ namespace System.Windows.Forms {
     
     /// <include file='doc\DataGridTableCollection.uex' path='docs/doc[@for="GridTableStylesCollection"]/*' />
     /// <devdoc>
-    /// <para>Represents a collection of <see cref='System.Windows.Forms.DataGridTableStyle'/> objects in the <see cref='System.Windows.Forms.DataGrid'/> 
+    /// <para>Represents a collection of <see cref='DataGridTableStyle'/> objects in the <see cref='DataGrid'/> 
     /// control.</para>
     /// </devdoc>
     [ListBindable(false)]
@@ -184,7 +190,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridTableCollection.uex' path='docs/doc[@for="GridTableStylesCollection.Add"]/*' />
         /// <devdoc>
-        /// <para>Adds a <see cref='System.Windows.Forms.DataGridTableStyle'/> to this collection.</para>
+        /// <para>Adds a <see cref='DataGridTableStyle'/> to this collection.</para>
         /// </devdoc>
         public virtual int Add(DataGridTableStyle table) {
             // set the rowHeaderWidth on the newly added table to at least the minimum value
@@ -261,7 +267,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridTableCollection.uex' path='docs/doc[@for="GridTableStylesCollection.Contains1"]/*' />
         /// <devdoc>
-        /// <para>Checks to see if a <see cref='System.Windows.Forms.DataGridTableStyle'/> with the given name
+        /// <para>Checks to see if a <see cref='DataGridTableStyle'/> with the given name
         ///    is contained in this collection.</para>
         /// </devdoc>
         public bool Contains(string name) {

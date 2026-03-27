@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/Solution Items/" />
+  <Project Path="System.Windows.Forms/System.Windows.Forms.Legacy.csproj" />
+  <Project Path="WinFormsDataGridDemo/WinFormsDataGridDemo.csproj" />
+</Solution>

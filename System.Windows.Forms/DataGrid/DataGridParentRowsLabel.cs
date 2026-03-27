@@ -4,15 +4,20 @@
 // </copyright>                                                                
 //------------------------------------------------------------------------------
 
-namespace System.Windows.Forms {
-        /// <include file='doc\DataGridParentRowsLabel.uex' path='docs/doc[@for="DataGridParentRowsLabelStyle"]/*' />
-        /// <devdoc>
-        ///    <para>
-        ///       Specifies how parent row labels of a DataGrid
-        ///       control are displayed.
-        ///    </para>
-        /// </devdoc>
-        public enum DataGridParentRowsLabelStyle {
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
+namespace System.Windows.Forms
+#endif
+{
+    /// <include file='doc\DataGridParentRowsLabel.uex' path='docs/doc[@for="DataGridParentRowsLabelStyle"]/*' />
+    /// <devdoc>
+    ///    <para>
+    ///       Specifies how parent row labels of a DataGrid
+    ///       control are displayed.
+    ///    </para>
+    /// </devdoc>
+    public enum DataGridParentRowsLabelStyle {
             /// <include file='doc\DataGridParentRowsLabel.uex' path='docs/doc[@for="DataGridParentRowsLabelStyle.None"]/*' />
             /// <devdoc>
             ///    <para>

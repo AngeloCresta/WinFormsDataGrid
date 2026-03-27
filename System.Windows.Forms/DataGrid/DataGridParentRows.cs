@@ -6,7 +6,11 @@
 
 //using System.Reflection.Metadata;
 
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
 namespace System.Windows.Forms
+#endif
 {
     using System.Text;
     using System.Runtime.Remoting;

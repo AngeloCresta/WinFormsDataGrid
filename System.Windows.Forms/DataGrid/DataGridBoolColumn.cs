@@ -4,8 +4,12 @@
 // </copyright>                                                                
 //------------------------------------------------------------------------------
 
-namespace System.Windows.Forms {
-
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
+namespace System.Windows.Forms
+#endif
+{
     using System.Diagnostics;
 
     using System;
@@ -40,13 +44,13 @@ namespace System.Windows.Forms {
         
         /// <include file='doc\DataGridBoolColumn.uex' path='docs/doc[@for="DataGridBoolColumn.DataGridBoolColumn"]/*' />
         /// <devdoc>
-        /// <para>Initializes a new instance of the <see cref='System.Windows.Forms.DataGridBoolColumn'/> class.</para>
+        /// <para>Initializes a new instance of the <see cref='DataGridBoolColumn'/> class.</para>
         /// </devdoc>
         public DataGridBoolColumn() : base() {}
 
         /// <include file='doc\DataGridBoolColumn.uex' path='docs/doc[@for="DataGridBoolColumn.DataGridBoolColumn1"]/*' />
         /// <devdoc>
-        /// <para>Initializes a new instance of a <see cref='System.Windows.Forms.DataGridBoolColumn'/> with the specified <see cref='System.Data.DataColumn'/>.</para>
+        /// <para>Initializes a new instance of a <see cref='DataGridBoolColumn'/> with the specified <see cref='System.Data.DataColumn'/>.</para>
         /// </devdoc>
         public DataGridBoolColumn(PropertyDescriptor prop)
             : base(prop) {}
@@ -352,7 +356,7 @@ namespace System.Windows.Forms {
         /// <include file='doc\DataGridBoolColumn.uex' path='docs/doc[@for="DataGridBoolColumn.Paint"]/*' />
         /// <internalonly/>
         /// <devdoc>
-        /// <para>Draws the <see cref='System.Windows.Forms.DataGridBoolColumn'/>
+        /// <para>Draws the <see cref='DataGridBoolColumn'/>
         /// with the given <see cref='System.Drawing.Graphics'/>,
         /// <see cref='System.Drawing.Rectangle'/> and row number.</para>
         /// </devdoc>
@@ -364,7 +368,7 @@ namespace System.Windows.Forms {
         /// <include file='doc\DataGridBoolColumn.uex' path='docs/doc[@for="DataGridBoolColumn.Paint1"]/*' />
         /// <internalonly/>
         /// <devdoc>
-        /// <para>Draws the <see cref='System.Windows.Forms.DataGridBoolColumn'/>
+        /// <para>Draws the <see cref='DataGridBoolColumn'/>
         /// with the given <see cref='System.Drawing.Graphics'/>, <see cref='System.Drawing.Rectangle'/>,
         /// row number, and alignment settings. </para>
         /// </devdoc>
@@ -374,7 +378,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridBoolColumn.uex' path='docs/doc[@for="DataGridBoolColumn.Paint2"]/*' />
         /// <devdoc>
-        /// <para>Draws the <see cref='System.Windows.Forms.DataGridBoolColumn'/> with the given <see cref='System.Drawing.Graphics'/>, <see cref='System.Drawing.Rectangle'/>,
+        /// <para>Draws the <see cref='DataGridBoolColumn'/> with the given <see cref='System.Drawing.Graphics'/>, <see cref='System.Drawing.Rectangle'/>,
         ///    row number, <see cref='System.Drawing.Brush'/>, and <see cref='System.Drawing.Color'/>. </para>
         /// </devdoc>
         protected internal override void Paint(Graphics g, Rectangle bounds, CurrencyManager source, int rowNum,

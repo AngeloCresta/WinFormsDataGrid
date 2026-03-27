@@ -4,13 +4,17 @@
 // </copyright>                                                                
 //------------------------------------------------------------------------------
 
-namespace System.Windows.Forms {
-
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
+namespace System.Windows.Forms
+#endif
+{
     using System.Diagnostics;
     /// <include file='doc\DataGridLineStyle.uex' path='docs/doc[@for="DataGridLineStyle"]/*' />
     /// <devdoc>
     ///    <para>
-    ///       Specifies the style of gridlines in a <see cref='System.Windows.Forms.DataGrid'/>.
+    ///       Specifies the style of gridlines in a <see cref='DataGrid'/>.
     ///    </para>
     /// </devdoc>
     public enum DataGridLineStyle {

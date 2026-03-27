@@ -4,7 +4,11 @@
 // </copyright>                                                                
 //------------------------------------------------------------------------------
 
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
 namespace System.Windows.Forms
+#endif
 {
 
     using System.Diagnostics;

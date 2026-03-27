@@ -4,7 +4,12 @@
 // </copyright>                                                                
 //------------------------------------------------------------------------------
 
-namespace System.Windows.Forms {
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
+namespace System.Windows.Forms
+#endif
+{
     using System.Runtime.Remoting;
 
     using System;
@@ -258,7 +263,7 @@ namespace System.Windows.Forms {
                 relationshipRect.Height = this.dgTable.BorderWidth + relationshipHeight * this.dgTable.RelationsList.Count;
                 relationshipRect.Height += 2; // relationship border
                 if (this.dgTable.RelationsList.Count > 0)
-                    relationshipRect.Height += 2 * System.Windows.Forms.DataGridTableStyle.relationshipSpacing;
+                    relationshipRect.Height += 2 * DataGridTableStyle.relationshipSpacing;
             }
             return relationshipRect;
         }
@@ -702,13 +707,13 @@ namespace System.Windows.Forms {
         }
 
         private int PaintRelationText(Graphics g, Rectangle bounds, bool alignToRight) {
-            g.FillRectangle(GetBackBrush(), bounds.X, bounds.Y, bounds.Width, System.Windows.Forms.DataGridTableStyle.relationshipSpacing);
+            g.FillRectangle(GetBackBrush(), bounds.X, bounds.Y, bounds.Width, DataGridTableStyle.relationshipSpacing);
 
             int relationshipHeight = this.dgTable.RelationshipHeight;
-            Rectangle textBounds = new Rectangle(bounds.X, bounds.Y + System.Windows.Forms.DataGridTableStyle.relationshipSpacing,
+            Rectangle textBounds = new Rectangle(bounds.X, bounds.Y + DataGridTableStyle.relationshipSpacing,
                                                  bounds.Width,
                                                  relationshipHeight);
-            int cy = System.Windows.Forms.DataGridTableStyle.relationshipSpacing;
+            int cy = DataGridTableStyle.relationshipSpacing;
             for (int r = 0; r < this.dgTable.RelationsList.Count; ++r) {
                 if (cy > bounds.Height)
                     break;
@@ -786,7 +791,7 @@ namespace System.Windows.Forms {
             int relation = -1;
             int relationshipHeight = this.dgTable.RelationshipHeight;
             Rectangle relRect = GetRelationshipRect();
-            int cy = base.Height - this.dgTable.BorderWidth + System.Windows.Forms.DataGridTableStyle.relationshipSpacing;
+            int cy = base.Height - this.dgTable.BorderWidth + DataGridTableStyle.relationshipSpacing;
             while (cy < relRect.Bottom) {
                 if (cy > y)
                     break;

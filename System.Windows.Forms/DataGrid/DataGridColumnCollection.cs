@@ -5,7 +5,12 @@
 //------------------------------------------------------------------------------
 
 
-namespace System.Windows.Forms {
+#if NET10_0_OR_GREATER
+namespace System.Windows.Forms.Legacy
+#else
+namespace System.Windows.Forms
+#endif
+{
     using System.Runtime.Remoting;
 
     using System.Diagnostics;
@@ -20,7 +25,7 @@ namespace System.Windows.Forms {
 
     /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection"]/*' />
     /// <devdoc>
-    /// <para>Represents a collection of System.Windows.Forms.DataGridColumnStyle objects in the <see cref='System.Windows.Forms.DataGrid'/>
+    /// <para>Represents a collection of DataGridColumnStyle objects in the <see cref='DataGrid'/>
     /// control.</para>
     /// </devdoc>
 
@@ -144,18 +149,18 @@ namespace System.Windows.Forms {
         /* implemented in BaseCollection
         /// <summary>
         ///    <para>
-        ///       Gets the number of System.Windows.Forms.DataGridColumnStyle objects in the collection.
+        ///       Gets the number of DataGridColumnStyle objects in the collection.
         ///    </para>
         /// </summary>
         /// <value>
         ///    <para>
-        ///       The number of System.Windows.Forms.DataGridColumnStyle objects in the System.Windows.Forms.GridColumnsStyleCollection .
+        ///       The number of DataGridColumnStyle objects in the System.Windows.Forms.GridColumnsStyleCollection .
         ///    </para>
         /// </value>
         /// <example>
         ///    <para>
         ///       The following example uses the <see cref='System.Windows.Forms.GridColumnsCollection.Count'/>
-        ///       property to determine how many System.Windows.Forms.DataGridColumnStyle objects are in a System.Windows.Forms.GridColumnsStyleCollection, and uses that number to iterate through the
+        ///       property to determine how many DataGridColumnStyle objects are in a System.Windows.Forms.GridColumnsStyleCollection, and uses that number to iterate through the
         ///       collection.
         ///    </para>
         ///    <code lang='VB'>
@@ -180,7 +185,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection.this"]/*' />
         /// <devdoc>
-        /// <para>Gets the System.Windows.Forms.DataGridColumnStyle at a specified index.</para>
+        /// <para>Gets the DataGridColumnStyle at a specified index.</para>
         /// </devdoc>
         public DataGridColumnStyle this[int index] {
             get {
@@ -190,7 +195,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection.this1"]/*' />
         /// <devdoc>
-        /// <para>Gets the System.Windows.Forms.DataGridColumnStyle
+        /// <para>Gets the DataGridColumnStyle
         /// with the specified name.</para>
         /// </devdoc>
         public DataGridColumnStyle this[string columnName] {
@@ -221,7 +226,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection.this2"]/*' />
         /// <devdoc>
-        /// <para>Gets the System.Windows.Forms.DataGridColumnStyle associated with the
+        /// <para>Gets the DataGridColumnStyle associated with the
         ///    specified <see cref='System.Data.DataColumn'/>.</para>
         /// </devdoc>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1043:UseIntegralOrStringArgumentForIndexers")]
@@ -247,7 +252,7 @@ namespace System.Windows.Forms {
         }
 
         /// <devdoc>
-        /// <para>Adds a System.Windows.Forms.DataGridColumnStyle to the System.Windows.Forms.GridColumnStylesCollection</para>
+        /// <para>Adds a DataGridColumnStyle to the System.Windows.Forms.GridColumnStylesCollection</para>
         /// </devdoc>
 
         internal void CheckForMappingNameDuplicates(DataGridColumnStyle column) {
@@ -353,7 +358,7 @@ namespace System.Windows.Forms {
         /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection.Contains"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Gets a value indicating whether the System.Windows.Forms.GridColumnStylesCollection contains a System.Windows.Forms.DataGridColumnStyle associated with the
+        ///       Gets a value indicating whether the System.Windows.Forms.GridColumnStylesCollection contains a DataGridColumnStyle associated with the
         ///       specified <see cref='System.Data.DataColumn'/>.
         ///    </para>
         /// </devdoc>
@@ -364,7 +369,7 @@ namespace System.Windows.Forms {
         /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection.Contains1"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Gets a value indicating whether the System.Windows.Forms.GridColumnsStyleCollection contains the specified System.Windows.Forms.DataGridColumnStyle.
+        ///       Gets a value indicating whether the System.Windows.Forms.GridColumnsStyleCollection contains the specified DataGridColumnStyle.
         ///    </para>
         /// </devdoc>
         public bool Contains(DataGridColumnStyle column) {
@@ -375,7 +380,7 @@ namespace System.Windows.Forms {
         /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection.Contains2"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Gets a value indicating whether the System.Windows.Forms.GridColumnsStyleCollection contains the System.Windows.Forms.DataGridColumnStyle with the specified name.
+        ///       Gets a value indicating whether the System.Windows.Forms.GridColumnsStyleCollection contains the DataGridColumnStyle with the specified name.
         ///    </para>
         /// </devdoc>
         public bool Contains(string name) {
@@ -448,19 +453,19 @@ namespace System.Windows.Forms {
         ///    </para>
         /// </returns>
         /// <exception cref='NotSupportedException'>
-        ///    An attempt was made to remove the System.Windows.Forms.DataGridColumnStyle through the <see cref='System.Collections.Enumerator'/> object's <see cref='System.Windows.Forms.Enumerator.Remove'/> method. Use the System.Windows.Forms.GridColumnsStyleCollection object's <see cref='System.Windows.Forms.GridColumnsCollection.Remove'/> method instead.
+        ///    An attempt was made to remove the DataGridColumnStyle through the <see cref='System.Collections.Enumerator'/> object's <see cref='System.Windows.Forms.Enumerator.Remove'/> method. Use the System.Windows.Forms.GridColumnsStyleCollection object's <see cref='System.Windows.Forms.GridColumnsCollection.Remove'/> method instead.
         /// </exception>
         /// <remarks>
         ///    <para>
         ///       Because this implementation doesn't support the removal
-        ///       of System.Windows.Forms.DataGridColumnStyle objects through the <see cref='System.Collections.Enumerator'/>
-        ///       class's <see cref='System.Windows.Forms.Enumerator.Remove'/> method, you must use the <see cref='System.Windows.Forms.DataGridCollection'/> class's <see cref='System.Windows.Forms.GridColumnsCollection.Remove'/>
+        ///       of DataGridColumnStyle objects through the <see cref='System.Collections.Enumerator'/>
+        ///       class's <see cref='System.Windows.Forms.Enumerator.Remove'/> method, you must use the <see cref='DataGridCollection'/> class's <see cref='System.Windows.Forms.GridColumnsCollection.Remove'/>
         ///       method instead.
         ///    </para>
         /// </remarks>
         /// <example>
         ///    <para>
-        ///       The following example gets an <see cref='System.Collections.IEnumerator'/> for that iterates through the System.Windows.Forms.GridColumnsStyleCollection. If a column in the collection is of type <see cref='System.Windows.Forms.DataGridBoolColumn'/>, it is deleted.
+        ///       The following example gets an <see cref='System.Collections.IEnumerator'/> for that iterates through the System.Windows.Forms.GridColumnsStyleCollection. If a column in the collection is of type <see cref='DataGridBoolColumn'/>, it is deleted.
         ///    </para>
         ///    <code lang='VB'>
         /// Private Sub RemoveBoolColumns()
@@ -491,7 +496,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection.IndexOf"]/*' />
         /// <devdoc>
-        /// <para>Gets the index of a specified System.Windows.Forms.DataGridColumnStyle.</para>
+        /// <para>Gets the index of a specified DataGridColumnStyle.</para>
         /// </devdoc>
         public int IndexOf(DataGridColumnStyle element) {
             int itemCount = items.Count;
@@ -519,7 +524,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection.Remove"]/*' />
         /// <devdoc>
-        /// <para>Removes the specified System.Windows.Forms.DataGridColumnStyle from the System.Windows.Forms.GridColumnsStyleCollection.</para>
+        /// <para>Removes the specified DataGridColumnStyle from the System.Windows.Forms.GridColumnsStyleCollection.</para>
         /// </devdoc>
         public void Remove(DataGridColumnStyle column) {
             if (this.isDefault) {
@@ -541,7 +546,7 @@ namespace System.Windows.Forms {
 
         /// <include file='doc\DataGridColumnCollection.uex' path='docs/doc[@for="GridColumnStylesCollection.RemoveAt"]/*' />
         /// <devdoc>
-        /// <para>Removes the System.Windows.Forms.DataGridColumnStyle with the specified index from the System.Windows.Forms.GridColumnsStyleCollection.</para>
+        /// <para>Removes the DataGridColumnStyle with the specified index from the System.Windows.Forms.GridColumnsStyleCollection.</para>
         /// </devdoc>
         public void RemoveAt(int index) {
             if (this.isDefault) {

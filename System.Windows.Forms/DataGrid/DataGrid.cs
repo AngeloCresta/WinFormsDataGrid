@@ -3,8 +3,12 @@
 //     Copyright (c) Microsoft Corporation.  All rights reserved.
 // </copyright>                                                                
 //------------------------------------------------------------------------------
+#if NET10_0_OR_GREATER
 
+namespace System.Windows.Forms.Legacy
+#else
 namespace System.Windows.Forms
+#endif
 {
     using System.Text;
     using System.Runtime.Serialization.Formatters;
@@ -42,7 +46,7 @@ namespace System.Windows.Forms
     DefaultEvent("Navigate"),
     ComplexBindingProperties("DataSource", "DataMember"),
     ]
-    [System.Drawing.ToolboxBitmapAttribute(typeof(System.Windows.Forms.DataGridView))]
+    [System.Drawing.ToolboxBitmapAttribute(typeof(DataGridView))]
     public class DataGrid : Control, ISupportInitialize, IDataGridEditingService
     {
 #if DEBUG
@@ -328,7 +332,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.DataGrid"]/*' />
         /// <devdoc>
-        /// <para>Initializes a new instance of the <see cref='System.Windows.Forms.DataGrid'/>
+        /// <para>Initializes a new instance of the <see cref='DataGrid'/>
         /// class.</para>
         /// </devdoc>
         public DataGrid() : base()
@@ -543,7 +547,7 @@ namespace System.Windows.Forms
         /// <devdoc>
         ///    <para>
         ///       Gets a value
-        ///       indicating whether the <see cref='System.Windows.Forms.DataGrid.AlternatingBackColor'/> property should be
+        ///       indicating whether the <see cref='DataGrid.AlternatingBackColor'/> property should be
         ///       persisted.
         ///    </para>
         /// </devdoc>
@@ -819,7 +823,7 @@ namespace System.Windows.Forms
         /// <devdoc>
         ///    <para>
         ///       Gets a value
-        ///       indicating whether the <see cref='System.Windows.Forms.DataGrid.CaptionBackColor'/> property should be
+        ///       indicating whether the <see cref='DataGrid.CaptionBackColor'/> property should be
         ///       persisted.
         ///    </para>
         /// </devdoc>
@@ -860,7 +864,7 @@ namespace System.Windows.Forms
         /// <devdoc>
         ///    <para>
         ///       Gets a value
-        ///       indicating whether the <see cref='System.Windows.Forms.DataGrid.CaptionForeColor'/> property should be
+        ///       indicating whether the <see cref='DataGrid.CaptionForeColor'/> property should be
         ///       persisted.
         ///    </para>
         /// </devdoc>
@@ -1429,7 +1433,7 @@ namespace System.Windows.Forms
         }
 
         /// <devdoc>
-        /// <para>Indicates whether the <see cref='System.Windows.Forms.DataGrid.BackColor'/> property should be 
+        /// <para>Indicates whether the <see cref='DataGrid.BackColor'/> property should be 
         ///    persisted.</para>
         /// </devdoc>
         internal bool ShouldSerializeBackColor()
@@ -2369,7 +2373,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.HeaderFont"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Indicates whether the <see cref='System.Windows.Forms.DataGrid.HeaderFont'/> property should be persisted.
+        ///       Indicates whether the <see cref='DataGrid.HeaderFont'/> property should be persisted.
         ///    </para>
         /// </devdoc>
         [
@@ -2422,7 +2426,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.HeaderForeColor"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Resets the <see cref='System.Windows.Forms.DataGrid.HeaderFont'/> property to its default value.
+        ///       Resets the <see cref='DataGrid.HeaderFont'/> property to its default value.
         ///    </para>
         /// </devdoc>
         /// <devdoc>
@@ -2619,7 +2623,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.LinkColor"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Indicates whether the <see cref='System.Windows.Forms.DataGrid.LinkColor'/> property should be persisted.
+        ///       Indicates whether the <see cref='DataGrid.LinkColor'/> property should be persisted.
         ///    </para>
         /// </devdoc>
         [
@@ -2717,7 +2721,7 @@ namespace System.Windows.Forms
 
         /// <devdoc>
         ///    <para>
-        ///       Indicates whether the <see cref='System.Windows.Forms.DataGrid.LinkHoverColor'/> property should be
+        ///       Indicates whether the <see cref='DataGrid.LinkHoverColor'/> property should be
         ///       persisted.
         ///    </para>
         /// </devdoc>
@@ -2940,7 +2944,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.ShouldSerializeParentRowsBackColor"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Indicates whether the <see cref='System.Windows.Forms.DataGrid.ParentRowsBackColor'/> property should be
+        ///       Indicates whether the <see cref='DataGrid.ParentRowsBackColor'/> property should be
         ///       persisted.
         ///    </para>
         /// </devdoc>
@@ -2987,7 +2991,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.ShouldSerializeParentRowsForeColor"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Indicates whether the <see cref='System.Windows.Forms.DataGrid.ParentRowsForeColor'/> property should be
+        ///       Indicates whether the <see cref='DataGrid.ParentRowsForeColor'/> property should be
         ///       persisted.
         ///    </para>
         /// </devdoc>
@@ -3036,7 +3040,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.PreferredRowHeight"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Gets or sets the preferred row height for the <see cref='System.Windows.Forms.DataGrid'/> control.
+        ///       Gets or sets the preferred row height for the <see cref='DataGrid'/> control.
         ///    </para>
         /// </devdoc>
         [
@@ -3420,7 +3424,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.this1"]/*' />
         /// <devdoc>
-        /// <para>Gets or sets the value of a specified <see cref='System.Windows.Forms.DataGridCell'/>.</para>
+        /// <para>Gets or sets the value of a specified <see cref='DataGridCell'/>.</para>
         /// </devdoc>
         public object this[DataGridCell cell]
         {
@@ -3822,7 +3826,7 @@ namespace System.Windows.Forms
         /*
         /// <summary>
         ///    <para>
-        ///       Raises the <see cref='System.Windows.Forms.DataGrid.ColumnHeaderClick'/> event.
+        ///       Raises the <see cref='DataGrid.ColumnHeaderClick'/> event.
         ///    </para>
         /// </summary>
         /// <param name='e'>
@@ -3833,8 +3837,8 @@ namespace System.Windows.Forms
         ///       Raising an event invokes the event-handling method through a delegate. For an
         ///       overview, see <see topic='cpconProvidingEventFunctionality'/>.
         ///    </para>
-        /// <see langword='Notes to Inheritors '/>When overriding <see cref='System.Windows.Forms.DataGrid.OnColumnHeaderClick'/> in an 
-        ///    derived class, be sure to call the base class's <see cref='System.Windows.Forms.DataGrid.OnColumnHeaderClick'/> method.
+        /// <see langword='Notes to Inheritors '/>When overriding <see cref='DataGrid.OnColumnHeaderClick'/> in an 
+        ///    derived class, be sure to call the base class's <see cref='DataGrid.OnColumnHeaderClick'/> method.
         /// </remarks>
         protected void OnColumnHeaderClick(EventArgs e) {
             RaiseEvent(EVENT_COLUMNHEADERCLICK, e);
@@ -3922,7 +3926,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.OnNavigate"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Raises the <see cref='System.Windows.Forms.DataGrid.Navigate'/>
+        ///       Raises the <see cref='DataGrid.Navigate'/>
         ///       event.
         ///    </para>
         /// </devdoc>
@@ -3936,7 +3940,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.OnNodeClick"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Raises the <see cref='System.Windows.Forms.DataGrid.ColumnResize'/> event.
+        ///       Raises the <see cref='DataGrid.ColumnResize'/> event.
         ///    </para>
         /// </devdoc>
         protected void OnColumnResize(EventArgs e) {
@@ -3974,7 +3978,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.OnRowHeaderClick"]/*' />
         /// <devdoc>
-        /// <para>Raises the <see cref='System.Windows.Forms.DataGrid.RowHeaderClick'/> event.</para>
+        /// <para>Raises the <see cref='DataGrid.RowHeaderClick'/> event.</para>
         /// </devdoc>
         protected void OnRowHeaderClick(EventArgs e)
         {
@@ -3985,7 +3989,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.OnScroll"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Raises the <see cref='System.Windows.Forms.DataGrid.Scroll'/> event.
+        ///       Raises the <see cref='DataGrid.Scroll'/> event.
         ///    </para>
         /// </devdoc>
         protected void OnScroll(EventArgs e)
@@ -5161,7 +5165,7 @@ namespace System.Windows.Forms
 
         /// <devdoc>
         ///    <para>
-        ///       Adds an event handler for the 'System.Windows.Forms.DataGrid.OnNodeClick'
+        ///       Adds an event handler for the 'DataGrid.OnNodeClick'
         ///       event.
         ///    </para>
         /// </devdoc>
@@ -5181,7 +5185,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.Scroll"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Occurs when the user scrolls the <see cref='System.Windows.Forms.DataGrid'/> control.
+        ///       Occurs when the user scrolls the <see cref='DataGrid'/> control.
         ///    </para>
         /// </devdoc>
         [Category(ModernDefaults.PropertyCategory.Action)]
@@ -6506,7 +6510,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.Dispose"]/*' />
         /// <devdoc>
         ///    Disposes of the resources (other than memory) used
-        ///    by the <see cref='System.Windows.Forms.DataGrid'/>.
+        ///    by the <see cref='DataGrid'/>.
         /// </devdoc>
         protected override void Dispose(bool disposing)
         {
@@ -6665,7 +6669,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.EndEdit"]/*' />
         /// <devdoc>
         ///    <para>Requests an end to an edit operation taking place on the
-        ///    <see cref='System.Windows.Forms.DataGrid'/>
+        ///    <see cref='DataGrid'/>
         ///    control.</para>
         /// </devdoc>
         public bool EndEdit(DataGridColumnStyle gridColumn, int rowNumber, bool shouldAbort)
@@ -6822,7 +6826,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.CreateGridColumn"]/*' />
         /// <devdoc>
         ///    <para>
-        ///       Creates a <see cref='System.Windows.Forms.DataGridColumnStyle'/> using the specified <see cref='System.ComponentModel.PropertyDescriptor'/>.
+        ///       Creates a <see cref='DataGridColumnStyle'/> using the specified <see cref='System.ComponentModel.PropertyDescriptor'/>.
         ///    </para>
         /// </devdoc>
         // protected and virtual because the SimpleDropdownDataGrid will override this
@@ -7199,7 +7203,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.GetCellBounds1"]/*' />
         /// <devdoc>
-        /// <para>Gets the <see cref='T:System.Drawing.Rectangle'/> of the cell specified by <see cref='System.Windows.Forms.DataGridCell'/>.</para>
+        /// <para>Gets the <see cref='T:System.Drawing.Rectangle'/> of the cell specified by <see cref='DataGridCell'/>.</para>
         /// </devdoc>
         public Rectangle GetCellBounds(DataGridCell dgc)
         {
@@ -10441,7 +10445,7 @@ namespace System.Windows.Forms
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.HitTestInfo"]/*' />
         /// <devdoc>
         ///    <para>Contains information
-        ///       about the part of the <see cref='System.Windows.Forms.DataGrid'/> control the user
+        ///       about the part of the <see cref='DataGrid'/> control the user
         ///       has clicked. This class cannot be inherited.</para>
         /// </devdoc>
         public sealed class HitTestInfo
@@ -10453,7 +10457,7 @@ namespace System.Windows.Forms
 
             /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.HitTestInfo.Nowhere"]/*' />
             /// <devdoc>
-            /// <para>Allows the <see cref='System.Windows.Forms.DataGrid.HitTestInfo'/> object to inform you the 
+            /// <para>Allows the <see cref='DataGrid.HitTestInfo'/> object to inform you the 
             ///    extent of the grid.</para>
             /// </devdoc>
             [
@@ -10501,7 +10505,7 @@ namespace System.Windows.Forms
 
             /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.HitTestInfo.Type"]/*' />
             /// <devdoc>
-            /// <para>Gets the part of the <see cref='System.Windows.Forms.DataGrid'/> control, other than the row or column, that was 
+            /// <para>Gets the part of the <see cref='DataGrid'/> control, other than the row or column, that was 
             ///    clicked.</para>
             /// </devdoc>
             public HitTestType Type
@@ -10530,7 +10534,7 @@ namespace System.Windows.Forms
 
             /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.HitTestInfo.GetHashCode"]/*' />
             /// <devdoc>
-            /// <para>Gets the hash code for the <see cref='System.Windows.Forms.DataGrid.HitTestInfo'/> instance.</para>
+            /// <para>Gets the hash code for the <see cref='DataGrid.HitTestInfo'/> instance.</para>
             /// </devdoc>
             public override int GetHashCode()
             {
@@ -10549,7 +10553,7 @@ namespace System.Windows.Forms
 
         /// <include file='doc\DataGrid.uex' path='docs/doc[@for="DataGrid.HitTestType"]/*' />
         /// <devdoc>
-        /// <para>Specifies the part of the <see cref='System.Windows.Forms.DataGrid'/> control the user has clicked.</para>
+        /// <para>Specifies the part of the <see cref='DataGrid'/> control the user has clicked.</para>
         /// </devdoc>
         [Flags]
         public enum HitTestType
