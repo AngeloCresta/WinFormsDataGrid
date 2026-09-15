@@ -3,7 +3,19 @@ using DataGrid = System.Windows.Forms.Legacy.DataGrid;
 #else
 using DataGrid = System.Windows.Forms.DataGrid;
 #endif
-
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WinFormsDataGrid
 {
@@ -52,7 +64,7 @@ namespace WinFormsDataGrid
             // dataGrid1
             // 
             dataGrid1.BorderStyle = BorderStyle.None;
-            dataGrid1.CaptureInternal = false;
+            //dataGrid1.CaptureInternal = false;
             dataGrid1.DataMember = "";
             dataGrid1.Dock = DockStyle.Fill;
             dataGrid1.HeaderForeColor = SystemColors.ControlText;

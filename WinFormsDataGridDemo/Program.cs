@@ -1,3 +1,10 @@
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace WinFormsDataGrid
 {
     internal static class Program
@@ -15,6 +22,10 @@ namespace WinFormsDataGrid
 
 #if NET9_0_OR_GREATER
             Application.SetColorMode(SystemColorMode.System);
+#endif
+#if NET11_0_OR_GREATER
+            Application.SetDefaultVisualStylesMode(VisualStylesMode.Latest);
+            Application.SetDefaultFormRevealMode(FormRevealMode.Deferred);
 #endif
 
             Application.Run(new Form1());
