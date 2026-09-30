@@ -663,7 +663,8 @@ namespace System.Windows.Forms
             g.SetClip(bounds);
 
             relRect.Height -= this.dgTable.BorderWidth;     // use bWidth not 1
-            g.DrawRectangle(SystemPens.ControlText, relRect.X, relRect.Y, relRect.Width - 1, relRect.Height - 1);
+            //g.DrawRectangle(SystemPens.ControlText, relRect.X, relRect.Y, relRect.Width - 1, relRect.Height - 1);
+            g.DrawRectangle(SystemPens.ActiveBorder, relRect.X, relRect.Y, relRect.Width - 1, relRect.Height - 1);
             relRect.Inflate(-1, -1);
 
             int cy = PaintRelationText(g, relRect, alignToRight);
